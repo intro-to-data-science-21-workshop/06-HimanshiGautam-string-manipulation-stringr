@@ -25,6 +25,23 @@ output:
 }
 </style>
 
+<style>
+.center_body {
+    position: fixed; top: 40%;
+    text-align:center;;
+}
+</style>
+
+<style>
+.small-code pre code {
+  font-size: 0.8em;
+}
+</style>
+
+```{r}
+library(stringr)
+```
+
 ---
 class: center, middle
 
@@ -33,16 +50,18 @@ class: center, middle
 ### Let the .red[games] begin!
 
 ---
-class: left, top
 
 # What is string manipulation 
+
 
 .box[
 - the process of handling and analyzing strings;
 
-- It comprises of various string parsing and manipulation techniques that can be sued to extract text patterns, modify strings and data wrangling
+- It comprises of various string parsing and manipulation techniques that can be sued to extract text patterns, modify strings and 
+data wrangling
 
-- Most data in the digital world contains text, and hence, preparing such data for analysis requires significant amount of string manipulation techniques
+- Most data in the digital world contains text, and hence, preparing such data for analysis requires significant amount of string 
+manipulation techniques
 ]
 
 ---
@@ -68,6 +87,68 @@ background-size: contain
 
 class: middle, center
 # Let's see some .red[examples]!
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+
+```{r comment='#'}
+example_string <- "4 seasons - fall, winter, spring and summer!"
+```
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+```{r comment='#'}
+example_string <- "4 seasons - fall, winter, spring and summer!"
+```
+
+What if we want to detect and/or locate a pattern in our example string?
+
+```{r comment='#'}
+str_detect(example_string, "fall") #detect presence of a pattern
+
+str_locate(example_string, "fall") #locate the pattern
+
+str_count(example_string, "s") #count all pattern matches
+```
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+```{r comment='#'}
+example_string <- "4 seasons - fall, winter, spring and summer!"
+```
+
+Maybe we want to subset a part of the string:
+
+```{r comment='#'}
+str_sub(example_string, start = 13, end = 16) #extract substrings
+
+str_extract(example_string, "win") #extract first pattern match
+
+str_extract_all(example_string, "a")
+```
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+```{r comment='#'}
+example_string <- "4 seasons - fall, winter, spring and summer!"
+```
+
 
 
 ---
