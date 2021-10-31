@@ -1,0 +1,42 @@
+---
+title: "Workshop - String manipulation with stringr"
+subtitle: "⚔<br/>with xaringan"
+author: "Himanshi and Elena"
+institute: "RStudio, PBC"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      css: [default, metropolis, metropolis-fonts]
+---
+
+class: center, middle
+
+# **String manipulation**
+
+### Let the games begin!
+
+---
+class: left, middle
+
+# What is string manipulation 
+
+- the process of handling and analyzing strings;
+
+- It comprises of various string parsing and manipulation techniques that can be sued to extract text patterns, modify strings and data wrangling
+
+- Most data in the digital world contains text, and hence, preparing such data for analysis requires significant amount of string manipulation techniques
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
