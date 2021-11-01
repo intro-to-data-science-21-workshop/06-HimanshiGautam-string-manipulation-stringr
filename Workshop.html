@@ -4,7 +4,7 @@
     <title>Workshop - String manipulation with stringr</title>
     <meta charset="utf-8" />
     <meta name="author" content="Himanshi and Elena" />
-    <meta name="date" content="2021-11-01" />
+    <meta name="date" content="2021-11-02" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Workshop - String manipulation with stringr
 ### Himanshi and Elena
 ### Hertie School
-### 2021-11-01
+### 2021-11-02
 
 ---
 
@@ -48,20 +48,29 @@ class: center, middle
 
 
 
-
 # **String manipulation**
 
 ### Let the .red[games] begin!
 
 ---
-
+class: small-code
 # What is string manipulation 
 
 
 .box[
 - the process of handling and analyzing strings;
 
-- It comprises of various string parsing and manipulation techniques that can be sued to extract text patterns, modify strings and 
+- As we recall, string is a one element character vector and that you can create strings with either single quotes or double quotes
+]
+
+
+```r
+string1 &lt;- "This is a really simple string: less is more"
+string2 &lt;- "If you want to include a 'quote' inside a string, please use single quotes"
+```
+
+.box[
+- It comprises of various string parsing and manipulation techniques that can be used to extract text patterns, modify strings and 
 data wrangling
 
 - Most data in the digital world contains text, and hence, preparing such data for analysis requires significant amount of string 
@@ -205,7 +214,7 @@ str_replace(example_string, pattern = "summer",replacement = "holidays") #replac
 ```
 
 ```r
-str_to_upper(example_string, locale = "en") #extract first pattern match
+str_to_upper(example_string, locale = "en") #converts everything to upper case
 ```
 
 ```
@@ -235,7 +244,7 @@ Some other fun string manipulation techniques are:
 
 
 ```r
-str_length(example_string) #replace pattern with another
+str_length(example_string) #returns the length of the string
 ```
 
 ```
@@ -251,7 +260,7 @@ str_c(example_string, "AND SNOW!", sep = "") #joins multiple strings into one
 ```
 
 ```r
-str_dup("RUN!", 3)
+str_dup("RUN!", 3) #repeats string n times
 ```
 
 ```
@@ -259,7 +268,8 @@ str_dup("RUN!", 3)
 ```
 
 ---
-#String manipluation in R
+class: small-code
+#String manipulation in R
 ##Regular Expressions and Stringr
 
 .box[

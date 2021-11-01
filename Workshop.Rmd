@@ -48,14 +48,23 @@ library(stringr)
 ### Let the .red[games] begin!
 
 ---
-
+class: small-code
 # What is string manipulation 
 
 
 .box[
 - the process of handling and analyzing strings;
 
-- It comprises of various string parsing and manipulation techniques that can be sued to extract text patterns, modify strings and 
+- As we recall, string is a one element character vector and that you can create strings with either single quotes or double quotes
+]
+
+```{r comment='#'}
+string1 <- "This is a really simple string: less is more"
+string2 <- "If you want to include a 'quote' inside a string, please use single quotes"
+```
+
+.box[
+- It comprises of various string parsing and manipulation techniques that can be used to extract text patterns, modify strings and 
 data wrangling
 
 - Most data in the digital world contains text, and hence, preparing such data for analysis requires significant amount of string 
@@ -152,7 +161,7 @@ Another important function in data wrangling is string modification:
 ```{r comment='#'}
 str_replace(example_string, pattern = "summer",replacement = "holidays") #replace pattern with another
 
-str_to_upper(example_string, locale = "en") #extract first pattern match
+str_to_upper(example_string, locale = "en") #converts everything to upper case
 
 unlist(str_split(example_string, "and")) #splits a string into substrings
 ```
@@ -170,15 +179,16 @@ example_string <- "4 seasons - fall, winter, spring and summer!"
 Some other fun string manipulation techniques are:
 
 ```{r comment='#'}
-str_length(example_string) #replace pattern with another
+str_length(example_string) #returns the length of the string
 
 str_c(example_string, "AND SNOW!", sep = "") #joins multiple strings into one
 
-str_dup("RUN!", 3)
+str_dup("RUN!", 3) #repeats string n times
 ```
 
 ---
-#String manipluation in R
+class: small-code
+#String manipulation in R
 ##Regular Expressions and Stringr
 
 .box[
