@@ -186,7 +186,66 @@ str_extract_all(example_string, "a")
 ```
 
 ---
+class: small-code
+# String manipulation in R
 
+Let us consider the following example string:
+
+
+```r
+example_string &lt;- "4 seasons - fall, winter, spring and summer!"
+```
+
+Another important function in data wrangling is string modification:
+
+
+```r
+str_replace(example_string, pattern = "summer",replacement = "holidays") #replace pattern with another
+```
+
+```
+# [1] "4 seasons - fall, winter, spring and holidays!"
+```
+
+```r
+str_to_upper(example_string, locale = "en") #extract first pattern match
+```
+
+```
+# [1] "4 SEASONS - FALL, WINTER, SPRING AND SUMMER!"
+```
+
+```r
+unlist(str_split(example_string, "and")) #splits a string into substrings
+```
+
+```
+# [1] "4 seasons - fall, winter, spring " " summer!"
+```
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+
+```r
+example_string &lt;- "4 seasons - fall, winter, spring and summer!"
+```
+
+Some other fun string manipulation techniques are:
+
+
+```r
+str_length(example_string) #replace pattern with another
+```
+
+```
+# [1] 44
+```
+
+---
 
 class: center, middle
 

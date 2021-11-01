@@ -149,7 +149,32 @@ Let us consider the following example string:
 example_string <- "4 seasons - fall, winter, spring and summer!"
 ```
 
+Another important function in data wrangling is string modification:
 
+```{r comment='#'}
+str_replace(example_string, pattern = "summer",replacement = "holidays") #replace pattern with another
+
+str_to_upper(example_string, locale = "en") #extract first pattern match
+
+unlist(str_split(example_string, "and")) #splits a string into substrings
+```
+
+---
+class: small-code
+# String manipulation in R
+
+Let us consider the following example string:
+
+```{r comment='#'}
+example_string <- "4 seasons - fall, winter, spring and summer!"
+```
+
+Some other fun string manipulation techniques are:
+
+```{r comment='#'}
+str_length(example_string) #replace pattern with another
+
+```
 
 ---
 
