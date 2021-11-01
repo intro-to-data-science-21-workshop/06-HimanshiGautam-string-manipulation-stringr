@@ -2,7 +2,7 @@
 title: "Workshop - String manipulation with stringr"
 author: "Himanshi and Elena"
 institute: "Hertie School"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -174,7 +174,44 @@ Some other fun string manipulation techniques are:
 ```{r comment='#'}
 str_length(example_string) #replace pattern with another
 
+str_c(example_string, "AND SNOW!", sep = "") #joins multiple strings into one
+
+str_dup("RUN!", 3)
 ```
+
+---
+#String manipluation in R
+##Regular Expressions and Stringr
+
+.box[
+Regular Expressions are a concise language used to define patterns in strings.
+We can used stringr functions by programming naive matching algorithms using Regular Expressions.
+]
+
+Consider the following example: The regular expression "[aeiou]" finds a match for any single character that is a vowel.
+
+```{r comment='#'}
+string_vector <- c("why", "do", "we", "use", "regular", "expressions") #define new vector
+
+str_subset(string_vector, "[aeiou]") #extract all strings with vowel in them
+```
+
+---
+
+class: middle, center
+#Summary
+
+---
+#Summary
+.box[
+- In the world of internet, string manipulation makes working with web data extremely important.
+
+- Text files and text data make up for a lot of information we process and analyze, highlighting the importance of string manipulation
+
+- Base R has some functions to work with strings, however, stringr makes it much easier to analyze strings
+
+- In cases of approximate pattern matching, regular expressions can be used alongwith stringr to conduct data analysis
+]
 
 ---
 

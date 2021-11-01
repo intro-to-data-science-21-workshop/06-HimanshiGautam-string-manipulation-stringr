@@ -4,6 +4,7 @@
     <title>Workshop - String manipulation with stringr</title>
     <meta charset="utf-8" />
     <meta name="author" content="Himanshi and Elena" />
+    <meta name="date" content="2021-11-01" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -14,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Workshop - String manipulation with stringr
 ### Himanshi and Elena
 ### Hertie School
-### 2016/12/12 (updated: 2021-11-01)
+### 2021-11-01
 
 ---
 
@@ -244,6 +245,61 @@ str_length(example_string) #replace pattern with another
 ```
 # [1] 44
 ```
+
+```r
+str_c(example_string, "AND SNOW!", sep = "") #joins multiple strings into one
+```
+
+```
+# [1] "4 seasons - fall, winter, spring and summer!AND SNOW!"
+```
+
+```r
+str_dup("RUN!", 3)
+```
+
+```
+# [1] "RUN!RUN!RUN!"
+```
+
+---
+#String manipluation in R
+##Regular Expressions and Stringr
+
+.box[
+Regular Expressions are a concise language used to define patterns in strings.
+We can used stringr functions by programming naive matching algorithms using Regular Expressions.
+]
+
+Consider the following example: The regular expression "[aeiou]" finds a match for any single character that is a vowel.
+
+
+```r
+string_vector &lt;- c("why", "do", "we", "use", "regular", "expressions") #define new vector
+
+str_subset(string_vector, "[aeiou]") #extract all strings with vowel in them
+```
+
+```
+# [1] "do"          "we"          "use"         "regular"     "expressions"
+```
+
+---
+
+class: middle, center
+Summary
+
+---
+
+.box[
+- In the world of internet, string manipulation makes working with web data extremely important.
+
+- Text files and text data make up for a lot of information we process and analyze, highlighting the importance of string manipulation
+
+- Base R has some functions to work with strings, however, stringr makes it much easier to analyze strings
+
+- In cases of approximate pattern matching, regular expressions can be used alongwith stringr to conduct data analysis
+]
 
 ---
 
