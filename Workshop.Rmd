@@ -222,6 +222,48 @@ class: middle, center
 ]
 
 ---
+class: small-code
+#Quick Test
+
+Let us consider the following string:
+```{r comment='#'}
+planets_string <- c("mars", "uranus", "venus", "saturn", "pluto - yes some people still consider me a planet")
+```
+
+.box[Which function can we use to find out  which planet has the longest name or contains more strings?
+
+- str_count
+
+- str_length
+
+- str_summary()]
+
+
+.box[How would you replace the symbol “-” for a “,”? 
+
+- str_mutate(planets_string, "-", ",")
+
+- str_replace(planets_string, ",", "-") 
+
+- str_replace(planets_string, "-", ",")]
+
+---
+class: small-code
+#Quick Test
+
+```{r comment='#'}
+planets_string <- c("mars", "uranus", "venus", "saturn", "pluto - yes some people still consider me a planet")
+```
+
+.box[How would you detect which planet contains more information than just its name?
+
+- str_detect(planets_string, "whitespace")
+
+- str_detect(planets_string, " ") 
+
+- str_find(planets_string, " ")
+]
+---
 
 class: center, middle
 
