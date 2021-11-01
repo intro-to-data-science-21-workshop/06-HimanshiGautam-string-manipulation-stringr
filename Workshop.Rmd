@@ -12,6 +12,7 @@ output:
       countIncrementalSlides: false
       css: [default, metropolis, metropolis-fonts]
 ---
+class: center, middle
 <style>
 .red{
   color: red;
@@ -38,12 +39,9 @@ output:
 }
 </style>
 
-```{r}
+```{r, include=FALSE}
 library(stringr)
 ```
-
----
-class: center, middle
 
 # **String manipulation**
 
