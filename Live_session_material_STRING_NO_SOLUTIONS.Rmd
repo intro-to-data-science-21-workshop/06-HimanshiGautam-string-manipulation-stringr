@@ -1,0 +1,229 @@
+---
+title: "String manipulation with stringr - Live session"
+author: "Himanshi & Elena"
+date: "`r format(Sys.time(), '%B %d, %Y | %H:%M:%S | %Z')`"
+output:
+  html_document:
+    code_folding: show
+    df_print: paged
+    highlight: tango
+    number_sections: no
+    theme: cosmo
+    toc: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, include = T}
+library(devtools)
+library(stringr)
+library(knitr)
+library(meme)
+devtools::install_github("hadley/emo")
+
+```
+
+Welcome!`r emo::ji("smile")` For this session we're going to work with the **stringr** package (make sure you have installed it!) and **regex**. This package is designed to manipulate *strings*, recall that you can create them with either single quotes or double quotes.
+
+Check stringr documentation: https://stringr.tidyverse.org/articles/from-base.html#order-strings-1
+
+```{r}
+string1 <- "This is a string"
+string2 <- 'If you want to include a "quote" inside a string, please use single quotes'
+```
+
+## String manipulation basics
+
+We will work with a simple list of dog breeds `r emo::ji("dog")` `r emo::ji("heart")`
+
+```{r}
+dogs_data <- c("Border Collie","Akita","Labrador","Poodle","Miniature Schnauzer","Fox Terrier","Tibetan Mastiff")  
+```
+
+1. Which is the **dog breed with the longest name** in the list? Please calculate it and sum the string length in the entire list.
+
+```{r}
+
+
+```
+
+2. Are you sure that you got the right number? `r emo::ji("thinking")`*Hint: beware of whitespaces*
+
+```{r}
+
+
+```
+
+3. Please indicate which breeds contain an **"a"** in its name.
+
+```{r}
+
+
+```
+
+4. Did you realized that it only returns the breeds written in **lowercase**? Find a way to convert all breeds to lowercase and repeat the previous step. 
+
+```{r}
+
+
+```
+
+5. Look for the position of breeds with an **uppercase "I"** but make sure that it takes into account all breeds.
+
+```{r}
+
+
+```
+
+6. Count the number of **"t" letters** in the list.
+
+```{r}
+
+
+```
+
+7. Replace with an exclamation the **first "a"** in each breed. *Hint: beware of lower and uppercases.*
+
+```{r}
+
+
+```
+
+8. Pick **Miniature Schnauzers** and retrieve the second part of the name using str_sub().
+
+```{r}
+
+
+```
+
+## Manipulating sentences
+
+```{r}
+```
+
+9. You can also work with sentences and convert string to **sentence**. Use this sentence *"  schnauzers were Originally Bred to be ratters, guard Dogs,     and All-purpose Dogs On German farms."*
+
+```{r}
+
+
+
+```
+
+10. The sentence looks better, but we still have some **white spaces** in between it. Please trim it.
+
+```{r}
+
+
+```
+
+11. Some **white spaces** in between are still there, please remove them as well.
+
+```{r}
+
+
+
+```
+
+12. Now we actually want that **white space back**, but we only need it at the beginning and end of it.
+
+```{r}
+
+
+```
+
+## Using RegEx
+
+**Regular expressions**, or **regexps**, are a concise language for describing patterns in strings.
+(/Users/elena/Documents/Hertie MPP/2nd Year/Data Science/regexpic)
+
+Check this useful **cheat sheet**:
+https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf
+
+```{r}
+knitr::include_graphics("/Users/elena/Documents/Hertie MPP/2nd Year/Data Science/regexpic.png")        
+```
+### The next list contains words with some **pronunciations and typos**. Our task is to standarize all the names and remove useless puntuations. 
+```{r}
+
+dogs_data <- c("Border Collie", "akita!", "LABRADOR", "Poodle.", "miniature schnauzer", "FOX TERRIER", 
+"Tibetan Mastiff")
+```
+
+13. Remove **punctuations** to standarize the list and save it as a new object called *"clean_list"*.
+
+```{r}
+
+
+```
+
+14. We want to rewrite all breeds in a **nice format**, use the previously saved object (clean_list), in which only the first letter is **uppercased**.
+
+```{r}
+
+
+```
+
+### Now we will work a list containing the number of dogs by breed and the last year they were counted.
+
+```{r}
+dog_count <- c("Border Collie 23 2019", "Akita 11 2020", "Labrador 24 2021", "Poodle 1 2017", "Miniature Schnauzer 80 2018", "Fox Terrier 5 2009", "Tibetan Mastiff 6 2010")
+```
+15. In which position is the **first number** in the strings? Please locate it.
+```{r}
+
+
+```
+16. In which position are **all the numbers** in the strings? Please locate it.
+```{r}
+
+
+```
+17. Let's use regex to extract the **quantity of dogs by breed**. We first need to locate numbers in the list
+```{r}
+
+
+```
+18. Let's use regex to extract the **quantity and year** of the last counting of dogs by breed. We first need to locate numbers in the list
+```{r}
+
+
+```
+
+### We will now use a list that contains the same info the the previous one, but the count of number of dogs is preceded by an **underscore**. 
+
+```{r}
+dog_count_pattern <- c("Border Collie_23", "Akita_11", "Labrador_24", "Poodle_1", "Miniature Schnauzer_80", "Fox Terrier_3", "Tibetan Mastiff_6")
+```
+
+19. Split the **name** and the **quantity** of dogs using str_split().
+
+```{r}
+
+
+```
+
+20. Sometimes it is useful the check the data in a character **matrix format**. Please provide a matrix showing breeds and count of dogs. *Hint: take into account that we only have 2 elements.*
+
+```{r}
+
+
+```
+
+21. Detect breeds whose name is composed of **2 words** and return a logical vector (TRUE, FALSE).
+
+```{r}
+
+
+```
+
+```{r}
+
+doggos_pic <- ("https://i.imgflip.com/4/4t0m5.jpg")
+
+meme(doggos_pic, upper = (" \n very [:punct:]"), lower = ("             \n      so many strings                                         \n wow data science "), size = 1, color = "green", font = "Helvetica", vjust = 0.7, r = 0.15, density = NULL)
+
+
+```
